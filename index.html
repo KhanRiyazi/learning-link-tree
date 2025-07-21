@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev & Design Hub | Learn & Earn</title>
+    <style>
+        :root {
+            --primary: #3a86ff;
+            --secondary: #8338ec;
+            --accent: #ff006e;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #28a745;
+            --warning: #ffc107;
+            --info: #17a2b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+            color: var(--dark);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            margin: 0 0.5rem;
+            background: none;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--dark);
+        }
+        
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .tab-btn:hover:not(.active) {
+            background: rgba(58, 134, 255, 0.1);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .link-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .link-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .link-content {
+            flex: 1;
+        }
+        
+        .link-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--dark);
+        }
+        
+        .link-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .link-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-right: 0.5rem;
+        }
+        
+        .badge-learn {
+            background: rgba(40, 167, 69, 0.1);
+            color: var(--success);
+        }
+        
+        .badge-earn {
+            background: rgba(255, 193, 7, 0.1);
+            color: var(--warning);
+        }
+        
+        .badge-portfolio {
+            background: rgba(23, 162, 184, 0.1);
+            color: var(--info);
+        }
+        
+        .ai-teacher {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .ai-teacher .link-icon {
+            background: white;
+            color: #764ba2;
+        }
+        
+        .ai-teacher .link-title,
+        .ai-teacher .link-desc {
+            color: white;
+        }
+        
+        .ai-input {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 8px;
+            border: none;
+            margin-top: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        
+        .ai-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .ai-response {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            display: none;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            color: var(--secondary);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .tab-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .link-card {
+                padding: 1rem;
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .link-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="./img/profile.jpeg" alt="Profile" class="avatar">
+            <h1>Dev & Design Hub</h1>
+            <p class="tagline">Python Developer | Canva Designer | Tech Educator</p>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="learn">Learn</button>
+                <button class="tab-btn" data-tab="earn">Earn</button>
+                <button class="tab-btn" data-tab="portfolio">Portfolio</button>
+            </div>
+        </header>
+        
+        <div class="tab-content active" id="learn">
+            <div class="link-card">
+                <div class="link-icon">🐍</div>
+                <div class="link-content">
+                    <span class="link-badge badge-learn">Learn</span>
+                    <h3 class="link-title">Python Fundamentals</h3>
+                    <p class="link-desc">Master the basics of Python programming with interactive tutorials</p>
+                    <a href="https://www.learnpython.org/" target="_blank" style="color: var(--primary); text-decoration: none;">Visit Resource →</a>
+                </div>
+            </div>
+            
+            <div class="link-card">
+                <div class="link-icon">🎨</div>
+                <div class="link-content">
+                    <span class="link-badge badge-learn">Learn</span>
+                    <h3 class="link-title">Canva Design Mastery</h3>
+                    <p class="link-desc">Learn professional design techniques with Canva's free courses</p>
+                    <a href="https://designschool.canva.com/" target="_blank" style="color: var(--primary); text-decoration: none;">Visit Resource →</a>
+                </div>
+            </div>
+            
+            <div class="link-card">
+                <div class="link-icon">🤖</div>
+                <div class="link-content">
+                    <span class="link-badge badge-learn">Learn</span>
+                    <h3 class="link-title">AI for Developers</h3>
+                    <p class="link-desc">How to integrate AI tools into your development workflow</p>
+                    <a href="https://www.deeplearning.ai/" target="_blank" style="color: var(--primary); text-decoration: none;">Visit Resource →</a>
+                </div>
+            </div>
+            
+            <div class="link-card">
+                <div class="link-icon">📊</div>
+                <div class="link-content">
+                    <span class="link-badge badge-learn">Learn</span>
+                    <h3 class="link-title">Data Science with Python</h3>
+                    <p class="link-desc">Pandas, NumPy, Matplotlib - the essential data science stack</p>
+                    <a href="https://www.datacamp.com/courses/intro-to-python-for-data-science" target="_blank" style="color: var(--primary); text-decoration: none;">Visit Resource →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="earn">
+            <div class="link-card">
+                <div class="link-icon">💼</div>
+                <div class="link-content">
+                    <span class="link-badge badge-earn">Earn</span>
+                    <h3 class="link-title">Freelance Python Projects</h3>
+                    <p class="link-desc">Find Python development gigs on top freelance platforms</p>
+                    <a href="https://www.upwork.com/" target="_blank" style="color: var(--primary); text-decoration: none;">Visit Platform →</a>
+                </div>
+            </div>
+            
+            <div class="link-card">
+                <div class="link-icon">🖌️</div>
+                <div class="link-content">
+                    <span class="link-badge badge-earn">Earn</span>
+                    <h3 class="link-title">Sell Canva Templates</h3>
+                    <p class="link-desc">Marketplaces to sell your Canva designs and templates</p>
+                    <a href="https://creativemarket.com/" target="_blank" style="color: var(--primary); text-decoration: none;">Visit Marketplace →</a>
+                </div>
+            </div>
+            
+            <div class="link-card">
+                <div class="link-icon">🔌</div>
+                <div class="link-content">
+                    <span class="link-badge badge-earn">Earn</span>
+                    <h3 class="link-title">Build & Sell Plugins</h3>
+                    <p class="link-desc">Create and monetize plugins/extensions for popular platforms</p>
+                    <a href="https://developer.chrome.com/docs/webstore/" target="_blank" style="color: var(--primary); text-decoration: none;">Learn How →</a>
+                </div>
+            </div>
+            
+            <div class="link-card">
+                <div class="link-icon">📝</div>
+                <div class="link-content">
+                    <span class="link-badge badge-earn">Earn</span>
+                    <h3 class="link-title">Tech Writing Opportunities</h3>
+                    <p class="link-desc">Get paid to write about Python, design, and development</p>
+                    <a href="https://dev.to/" target="_blank" style="color: var(--primary); text-decoration: none;">Explore Options →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="portfolio">
+            <div class="link-card">
+                <div class="link-icon">💻</div>
+                <div class="link-content">
+                    <span class="link-badge badge-portfolio">Portfolio</span>
+                    <h3 class="link-title">GitHub Profile</h3>
+                    <p class="link-desc">Explore my open-source Python projects and contributions</p>
+                    <a href="https://github.com/" target="_blank" style="color: var(--primary); text-decoration: none;">View Profile →</a>
+                </div>
+            </div>
+            
+            <div class="link-card">
+                <div class="link-icon">🖼️</div>
+                <div class="link-content">
+                    <span class="link-badge badge-portfolio">Portfolio</span>
+                    <h3 class="link-title">Design Portfolio</h3>
+                    <p class="link-desc">Collection of my Canva designs and branding projects</p>
+                    <a href="https://www.behance.net/" target="_blank" style="color: var(--primary); text-decoration: none;">View Portfolio →</a>
+                </div>
+            </div>
+            
+            <div class="link-card">
+                <div class="link-icon">📱</div>
+                <div class="link-content">
+                    <span class="link-badge badge-portfolio">Portfolio</span>
+                    <h3 class="link-title">Web Apps Showcase</h3>
+                    <p class="link-desc">Interactive web applications built with Python and JavaScript</p>
+                    <a href="https://glitch.com/" target="_blank" style="color: var(--primary); text-decoration: none;">View Projects →</a>
+                </div>
+            </div>
+            
+            <div class="link-card">
+                <div class="link-icon">📈</div>
+                <div class="link-content">
+                    <span class="link-badge badge-portfolio">Portfolio</span>
+                    <h3 class="link-title">Data Visualization Gallery</h3>
+                    <p class="link-desc">Python-created data visualizations and dashboards</p>
+                    <a href="https://public.tableau.com/" target="_blank" style="color: var(--primary); text-decoration: none;">View Gallery →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="link-card ai-teacher">
+            <div class="link-icon">🧠</div>
+            <div class="link-content">
+                <h3 class="link-title">AI Decision Assistant</h3>
+                <p class="link-desc">Ask me anything about Python, design, or career decisions</p>
+                
+                <input type="text" class="ai-input" placeholder="Should I learn Flask or Django first?">
+                <button id="ask-btn" style="background: white; color: #764ba2; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; margin-top: 0.5rem; cursor: pointer; font-weight: 600;">Ask AI</button>
+                
+                <div class="ai-response" id="ai-response">
+                    <p id="ai-text"></p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Connect with me on social media</p>
+            <div class="social-links">
+                <a href="https://twitter.com/" class="social-link" target="_blank">🐦</a>
+                <a href="https://linkedin.com/" class="social-link" target="_blank">🔗</a>
+                <a href="https://instagram.com/" class="social-link" target="_blank">📷</a>
+                <a href="https://youtube.com/" class="social-link" target="_blank">▶️</a>
+            </div>
+            <p style="margin-top: 1rem;">© 2023 Dev & Design Hub. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Tab functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                btn.classList.add('active');
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // AI Decision Assistant
+        const askBtn = document.getElementById('ask-btn');
+        const aiInput = document.querySelector('.ai-input');
+        const aiResponse = document.getElementById('ai-response');
+        const aiText = document.getElementById('ai-text');
+        
+        // Sample responses for the AI teacher
+        const aiResponses = {
+            "should i learn flask or django first": "For beginners, Flask is often recommended first because it's more lightweight and easier to grasp. Once you understand Flask's concepts, Django will make more sense with its 'batteries-included' approach. Flask gives you more flexibility to learn concepts piece by piece.",
+            "how to improve my canva designs": "1) Use consistent color palettes 2) Maintain proper spacing and alignment 3) Limit fonts to 2-3 per design 4) Use high-quality images 5) Create visual hierarchy with size and contrast 6) Leverage Canva's templates as starting points 7) Study design principles like balance and proximity.",
+            "best python projects for portfolio": "Great portfolio projects include: 1) Web scraper 2) Data visualization dashboard 3) Automation script 4) REST API 5) Machine learning model with Flask interface 6) Discord/Slack bot 7) Portfolio website with Django. Focus on projects that solve real problems.",
+            "how to price my design services": "Consider: 1) Your experience level 2) Project complexity 3) Time required 4) Client budget 5) Market rates. Beginners might charge $15-30/hr or $50-200 per design. Intermediate designers $30-75/hr or $200-500 per project. Always provide clear scope and deliverables.",
+            "essential python libraries to learn": "Core libraries: 1) Requests (HTTP) 2) Pandas (data) 3) NumPy (math) 4) Matplotlib/Seaborn (visualization) 5) Flask/Django (web) 6) SQLAlchemy (database) 7) PyTest (testing) 8) BeautifulSoup (scraping). Start with ones relevant to your goals.",
+            "": "Please ask a question about Python development, Canva design, or career decisions."
+        };
+        
+        askBtn.addEventListener('click', () => {
+            const question = aiInput.value.toLowerCase().trim();
+            
+            if (question) {
+                // Simple keyword matching - a real implementation would use more advanced NLP
+                let response = "I recommend focusing on practical projects that interest you. Building real applications is the best way to learn.";
+                
+                for (const [key, value] of Object.entries(aiResponses)) {
+                    if (question.includes(key) && key !== "") {
+                        response = value;
+                        break;
+                    }
+                }
+                
+                aiText.textContent = response;
+                aiResponse.style.display = 'block';
+            } else {
+                aiText.textContent = aiResponses[""];
+                aiResponse.style.display = 'block';
+            }
+        });
+        
+        // Allow pressing Enter to ask question
+        aiInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                askBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>
