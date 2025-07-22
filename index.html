@@ -3,95 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev & Design Hub | Learn & Earn</title>
+    <title>Entrepreneurial Dev Hub | Build & Monetize</title>
     <style>
         :root {
-            --primary: #3a86ff;
-            --secondary: #8338ec;
-            --accent: #ff006e;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --success: #28a745;
-            --warning: #ffc107;
-            --info: #17a2b8;
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --accent: #ec4899;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --info: #0ea5e9;
+            --entrepreneur: #4338ca;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
             min-height: 100vh;
             padding: 2rem;
             color: var(--dark);
+            line-height: 1.6;
         }
         
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
         
         header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             animation: fadeIn 1s ease-in-out;
         }
         
         .avatar {
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
         }
         
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
             color: var(--primary);
+            font-weight: 800;
+            letter-spacing: -0.025em;
         }
         
         .tagline {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--secondary);
             margin-bottom: 1.5rem;
-            font-weight: 500;
+            font-weight: 600;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: #64748b;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+            border-left: 3px solid var(--primary);
         }
         
         .tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid #eee;
+            margin-bottom: 2.5rem;
+            border-bottom: 2px solid #e2e8f0;
             padding-bottom: 0.5rem;
+            flex-wrap: wrap;
         }
         
         .tab-btn {
-            padding: 0.75rem 1.5rem;
-            margin: 0 0.5rem;
+            padding: 0.75rem 1.75rem;
+            margin: 0 0.5rem 0.5rem;
             background: none;
             border: none;
-            border-radius: 30px;
+            border-radius: 9999px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             color: var(--dark);
+            border: 2px solid transparent;
         }
         
         .tab-btn.active {
             background: var(--primary);
             color: white;
+            border-color: var(--primary);
+        }
+        
+        .tab-btn.entrepreneur {
+            background: var(--entrepreneur);
+            color: white;
         }
         
         .tab-btn:hover:not(.active) {
-            background: rgba(58, 134, 255, 0.1);
+            background: rgba(37, 99, 235, 0.1);
+            border-color: rgba(37, 99, 235, 0.2);
         }
         
         .tab-content {
@@ -105,34 +129,45 @@
         
         .link-card {
             background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             position: relative;
             overflow: hidden;
+            border: 1px solid #e2e8f0;
         }
         
         .link-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .link-card.entrepreneur {
+            border-left: 6px solid var(--entrepreneur);
         }
         
         .link-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 1rem;
+            margin-right: 1.5rem;
             flex-shrink: 0;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .entrepreneur .link-icon {
+            background: var(--entrepreneur);
         }
         
         .link-content {
@@ -140,112 +175,194 @@
         }
         
         .link-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
             color: var(--dark);
+            display: flex;
+            align-items: center;
         }
         
         .link-desc {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: #64748b;
+            margin-bottom: 1rem;
         }
         
         .link-badge {
             display: inline-block;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: 600;
+            padding: 0.35rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-right: 0.5rem;
+            letter-spacing: 0.05em;
+            margin-right: 0.75rem;
+            margin-bottom: 0.5rem;
         }
         
         .badge-learn {
-            background: rgba(40, 167, 69, 0.1);
+            background: rgba(16, 185, 129, 0.1);
             color: var(--success);
         }
         
         .badge-earn {
-            background: rgba(255, 193, 7, 0.1);
+            background: rgba(245, 158, 11, 0.1);
             color: var(--warning);
         }
         
         .badge-portfolio {
-            background: rgba(23, 162, 184, 0.1);
+            background: rgba(14, 165, 233, 0.1);
             color: var(--info);
         }
         
-        .ai-teacher {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+        .badge-entrepreneur {
+            background: rgba(67, 56, 202, 0.1);
+            color: var(--entrepreneur);
         }
         
-        .ai-teacher .link-icon {
+        .ai-mentor {
+            background: linear-gradient(135deg, #1e3a8a 0%, #5b21b6 100%);
+            color: white;
+            margin-top: 3rem;
+            border: none;
+        }
+        
+        .ai-mentor .link-icon {
             background: white;
-            color: #764ba2;
+            color: #5b21b6;
+            font-size: 1.75rem;
         }
         
-        .ai-teacher .link-title,
-        .ai-teacher .link-desc {
+        .ai-mentor .link-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
             color: white;
+        }
+        
+        .ai-mentor .link-desc {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+        }
+        
+        .ai-input-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 0.5rem;
         }
         
         .ai-input {
             width: 100%;
-            padding: 0.75rem;
-            border-radius: 8px;
+            padding: 1.25rem;
+            border-radius: 12px;
             border: none;
-            margin-top: 1rem;
             background: rgba(255, 255, 255, 0.2);
             color: white;
+            font-size: 1.05rem;
+            padding-right: 140px;
+            backdrop-filter: blur(5px);
         }
         
         .ai-input::placeholder {
             color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+        }
+        
+        .ai-submit {
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            background: white;
+            color: #5b21b6;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .ai-submit:hover {
+            background: #f8fafc;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sample-questions {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
         }
         
         .ai-response {
-            margin-top: 1rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
+            margin-top: 1.5rem;
+            padding: 1.75rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
             display: none;
+            border-left: 4px solid white;
+            backdrop-filter: blur(5px);
+        }
+        
+        .ai-response p {
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        .money-metric {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-right: 0.75rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .money-metric svg {
+            margin-right: 0.5rem;
+            color: var(--success);
         }
         
         footer {
             text-align: center;
-            margin-top: 3rem;
-            color: #666;
-            font-size: 0.9rem;
+            margin-top: 4rem;
+            color: #64748b;
+            font-size: 0.95rem;
         }
         
         .social-links {
             display: flex;
             justify-content: center;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
         }
         
         .social-link {
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             background: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 0.5rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0 0.5rem 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             color: var(--primary);
             text-decoration: none;
+            font-size: 1.25rem;
         }
         
         .social-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             color: var(--secondary);
         }
         
@@ -254,181 +371,207 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             body {
-                padding: 1rem;
+                padding: 1.5rem;
             }
             
             h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .tab-btn {
-                padding: 0.5rem 1rem;
+                padding: 0.6rem 1.25rem;
                 font-size: 0.9rem;
+                margin: 0 0.25rem 0.5rem;
             }
             
             .link-card {
-                padding: 1rem;
+                padding: 1.5rem;
                 flex-direction: column;
-                text-align: center;
             }
             
             .link-icon {
                 margin-right: 0;
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .ai-mentor .link-title {
+                font-size: 1.3rem;
+            }
+            
+            .ai-mentor .link-desc {
+                font-size: 1rem;
+            }
+            
+            .ai-input {
+                padding: 1rem;
+                padding-right: 110px;
+            }
+            
+            .ai-submit {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
             }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <header>
             <img src="./img/profile.jpeg" alt="Profile" class="avatar">
-            <h1>Dev & Design Hub</h1>
-            <p class="tagline">Python Developer | Canva Designer | Tech Educator</p>
+            <h1>Entrepreneurial Dev Hub</h1>
+            <p class="tagline">Build Scalable Skills | Create Income Streams | Work From Anywhere</p>
+            <p class="quote">"The best way to predict the future is to create it." — Peter Drucker</p>
             
             <div class="tabs">
-                <button class="tab-btn active" data-tab="learn">Learn</button>
-                <button class="tab-btn" data-tab="earn">Earn</button>
-                <button class="tab-btn" data-tab="portfolio">Portfolio</button>
+                <button class="tab-btn active" data-tab="learn">Learn Like a Founder</button>
+                <button class="tab-btn" data-tab="earn">Income Systems</button>
+                <button class="tab-btn entrepreneur" data-tab="portfolio">Scalable Portfolio</button>
             </div>
         </header>
         
         <div class="tab-content active" id="learn">
-            <div class="link-card">
-                <div class="link-icon">🐍</div>
+            <div class="link-card entrepreneur">
+                <div class="link-icon">🚀</div>
                 <div class="link-content">
-                    <span class="link-badge badge-learn">Learn</span>
-                    <h3 class="link-title">Python Fundamentals</h3>
-                    <p class="link-desc">Master the basics of Python programming with interactive tutorials</p>
-                    <a href="https://www.learnpython.org/" target="_blank" style="color: var(--primary); text-decoration: none;">Visit Resource →</a>
+                    <span class="link-badge badge-entrepreneur">Founder Mindset</span>
+                    <h3 class="link-title">Zero to $1M: Entrepreneurial Coding</h3>
+                    <p class="link-desc">Learn programming through the lens of building scalable businesses. Case studies from Bezos, Musk, and Gates on how they used tech to build empires.</p>
+                    <div class="money-metric">
+                        <i class="fas fa-clock"></i> 6-12 month path
+                    </div>
+                    <div class="money-metric">
+                        <i class="fas fa-dollar-sign"></i> $10K-$100K potential
+                    </div>
+                    <a href="https://www.ycombinator.com/library" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 0.5rem;">Start Learning →</a>
                 </div>
             </div>
             
-            <div class="link-card">
-                <div class="link-icon">🎨</div>
+            <div class="link-card entrepreneur">
+                <div class="link-icon">📈</div>
                 <div class="link-content">
-                    <span class="link-badge badge-learn">Learn</span>
-                    <h3 class="link-title">Canva Design Mastery</h3>
-                    <p class="link-desc">Learn professional design techniques with Canva's free courses</p>
-                    <a href="https://designschool.canva.com/" target="_blank" style="color: var(--primary); text-decoration: none;">Visit Resource →</a>
+                    <span class="link-badge badge-entrepreneur">AI Automation</span>
+                    <h3 class="link-title">Build AI Tools That Sell</h3>
+                    <p class="link-desc">Create AI-powered micro-SaaS products using Python. Learn to identify profitable niches and automate solutions people will pay for monthly.</p>
+                    <div class="money-metric">
+                        <i class="fas fa-chart-line"></i> $500-$5K MRR potential
+                    </div>
+                    <a href="https://www.indiehackers.com/" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 0.5rem;">Explore AI Business Models →</a>
                 </div>
             </div>
             
-            <div class="link-card">
-                <div class="link-icon">🤖</div>
+            <div class="link-card entrepreneur">
+                <div class="link-icon">💡</div>
                 <div class="link-content">
-                    <span class="link-badge badge-learn">Learn</span>
-                    <h3 class="link-title">AI for Developers</h3>
-                    <p class="link-desc">How to integrate AI tools into your development workflow</p>
-                    <a href="https://www.deeplearning.ai/" target="_blank" style="color: var(--primary); text-decoration: none;">Visit Resource →</a>
-                </div>
-            </div>
-            
-            <div class="link-card">
-                <div class="link-icon">📊</div>
-                <div class="link-content">
-                    <span class="link-badge badge-learn">Learn</span>
-                    <h3 class="link-title">Data Science with Python</h3>
-                    <p class="link-desc">Pandas, NumPy, Matplotlib - the essential data science stack</p>
-                    <a href="https://www.datacamp.com/courses/intro-to-python-for-data-science" target="_blank" style="color: var(--primary); text-decoration: none;">Visit Resource →</a>
+                    <span class="link-badge badge-entrepreneur">Digital Products</span>
+                    <h3 class="link-title">Design & Sell Digital Assets</h3>
+                    <p class="link-desc">Master Canva to create templates, icons, and design systems that sell repeatedly with no extra work. The 1-to-many business model.</p>
+                    <div class="money-metric">
+                        <i class="fas fa-coins"></i> Passive income stream
+                    </div>
+                    <a href="https://www.creativefabrica.com/sellers/" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 0.5rem;">View Marketplaces →</a>
                 </div>
             </div>
         </div>
         
         <div class="tab-content" id="earn">
             <div class="link-card">
-                <div class="link-icon">💼</div>
+                <div class="link-icon">🔄</div>
                 <div class="link-content">
-                    <span class="link-badge badge-earn">Earn</span>
-                    <h3 class="link-title">Freelance Python Projects</h3>
-                    <p class="link-desc">Find Python development gigs on top freelance platforms</p>
-                    <a href="https://www.upwork.com/" target="_blank" style="color: var(--primary); text-decoration: none;">Visit Platform →</a>
+                    <span class="link-badge badge-earn">Recurring Revenue</span>
+                    <h3 class="link-title">SaaS Development Blueprint</h3>
+                    <p class="link-desc">Step-by-step guide to building subscription software with Python. From MVP to scaling, inspired by how Basecamp and Mailchimp started.</p>
+                    <div class="money-metric">
+                        <i class="fas fa-calendar-alt"></i> $99-$999/month
+                    </div>
+                    <a href="https://www.saaspegasus.com/guides/" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 0.5rem;">Learn SaaS Development →</a>
                 </div>
             </div>
             
             <div class="link-card">
-                <div class="link-icon">🖌️</div>
+                <div class="link-icon">🌎</div>
                 <div class="link-content">
-                    <span class="link-badge badge-earn">Earn</span>
-                    <h3 class="link-title">Sell Canva Templates</h3>
-                    <p class="link-desc">Marketplaces to sell your Canva designs and templates</p>
-                    <a href="https://creativemarket.com/" target="_blank" style="color: var(--primary); text-decoration: none;">Visit Marketplace →</a>
+                    <span class="link-badge badge-earn">Global Marketplace</span>
+                    <h3 class="link-title">High-Ticket Freelancing</h3>
+                    <p class="link-desc">Position yourself as an expert to command premium rates ($100-$300/hr) for Python automation and AI solutions on Upwork and Toptal.</p>
+                    <div class="money-metric">
+                        <i class="fas fa-globe"></i> Worldwide clients
+                    </div>
+                    <a href="https://www.toptal.com/" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 0.5rem;">View Elite Platforms →</a>
                 </div>
             </div>
             
             <div class="link-card">
-                <div class="link-icon">🔌</div>
+                <div class="link-icon">🎓</div>
                 <div class="link-content">
-                    <span class="link-badge badge-earn">Earn</span>
-                    <h3 class="link-title">Build & Sell Plugins</h3>
-                    <p class="link-desc">Create and monetize plugins/extensions for popular platforms</p>
-                    <a href="https://developer.chrome.com/docs/webstore/" target="_blank" style="color: var(--primary); text-decoration: none;">Learn How →</a>
-                </div>
-            </div>
-            
-            <div class="link-card">
-                <div class="link-icon">📝</div>
-                <div class="link-content">
-                    <span class="link-badge badge-earn">Earn</span>
-                    <h3 class="link-title">Tech Writing Opportunities</h3>
-                    <p class="link-desc">Get paid to write about Python, design, and development</p>
-                    <a href="https://dev.to/" target="_blank" style="color: var(--primary); text-decoration: none;">Explore Options →</a>
+                    <span class="link-badge badge-earn">Education Business</span>
+                    <h3 class="link-title">Create & Sell Courses</h3>
+                    <p class="link-desc">Package your expertise into premium courses on platforms like Udemy or teach live cohorts. The "Learn Once, Sell Forever" model.</p>
+                    <div class="money-metric">
+                        <i class="fas fa-graduation-cap"></i> $1K-$50K/course
+                    </div>
+                    <a href="https://teachable.com/" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 0.5rem;">Start Teaching →</a>
                 </div>
             </div>
         </div>
         
         <div class="tab-content" id="portfolio">
-            <div class="link-card">
-                <div class="link-icon">💻</div>
+            <div class="link-card entrepreneur">
+                <div class="link-icon">🔗</div>
                 <div class="link-content">
-                    <span class="link-badge badge-portfolio">Portfolio</span>
-                    <h3 class="link-title">GitHub Profile</h3>
-                    <p class="link-desc">Explore my open-source Python projects and contributions</p>
-                    <a href="https://github.com/" target="_blank" style="color: var(--primary); text-decoration: none;">View Profile →</a>
+                    <span class="link-badge badge-portfolio">Income-Producing</span>
+                    <h3 class="link-title">Revenue-Generating Projects</h3>
+                    <p class="link-desc">Showcase projects that actually make money, not just code samples. Potential employers/clients want to see business value creation.</p>
+                    <div class="money-metric">
+                        <i class="fas fa-wallet"></i> Monetized portfolio
+                    </div>
+                    <a href="https://www.indiehackers.com/products" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 0.5rem;">See Examples →</a>
                 </div>
             </div>
             
-            <div class="link-card">
-                <div class="link-icon">🖼️</div>
+            <div class="link-card entrepreneur">
+                <div class="link-icon">📊</div>
                 <div class="link-content">
-                    <span class="link-badge badge-portfolio">Portfolio</span>
-                    <h3 class="link-title">Design Portfolio</h3>
-                    <p class="link-desc">Collection of my Canva designs and branding projects</p>
-                    <a href="https://www.behance.net/" target="_blank" style="color: var(--primary); text-decoration: none;">View Portfolio →</a>
+                    <span class="link-badge badge-portfolio">Metrics That Matter</span>
+                    <h3 class="link-title">Results-Oriented Case Studies</h3>
+                    <p class="link-desc">Document how your work improved metrics: "Increased conversions by 30%" or "Automated $10K/month in manual work".</p>
+                    <div class="money-metric">
+                        <i class="fas fa-percentage"></i> ROI demonstrated
+                    </div>
+                    <a href="https://www.behance.net/galleries/case-studies" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 0.5rem;">View Case Studies →</a>
                 </div>
             </div>
             
-            <div class="link-card">
-                <div class="link-icon">📱</div>
+            <div class="link-card entrepreneur">
+                <div class="link-icon">🤝</div>
                 <div class="link-content">
-                    <span class="link-badge badge-portfolio">Portfolio</span>
-                    <h3 class="link-title">Web Apps Showcase</h3>
-                    <p class="link-desc">Interactive web applications built with Python and JavaScript</p>
-                    <a href="https://glitch.com/" target="_blank" style="color: var(--primary); text-decoration: none;">View Projects →</a>
-                </div>
-            </div>
-            
-            <div class="link-card">
-                <div class="link-icon">📈</div>
-                <div class="link-content">
-                    <span class="link-badge badge-portfolio">Portfolio</span>
-                    <h3 class="link-title">Data Visualization Gallery</h3>
-                    <p class="link-desc">Python-created data visualizations and dashboards</p>
-                    <a href="https://public.tableau.com/" target="_blank" style="color: var(--primary); text-decoration: none;">View Gallery →</a>
+                    <span class="link-badge badge-portfolio">Business Partnerships</span>
+                    <h3 class="link-title">Joint Venture Showcase</h3>
+                    <p class="link-desc">Highlight collaborations where your tech skills helped other businesses grow. Shows you understand commercial applications.</p>
+                    <div class="money-metric">
+                        <i class="fas fa-handshake"></i> Strategic value
+                    </div>
+                    <a href="https://www.producthunt.com/" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 0.5rem;">Explore Partnerships →</a>
                 </div>
             </div>
         </div>
         
-        <div class="link-card ai-teacher">
+        <div class="link-card ai-mentor">
             <div class="link-icon">🧠</div>
             <div class="link-content">
-                <h3 class="link-title">AI Decision Assistant</h3>
-                <p class="link-desc">Ask me anything about Python, design, or career decisions</p>
+                <h3 class="link-title">AI Business Strategist</h3>
+                <p class="link-desc">Get personalized advice on building tech income streams, just like the mentors of Bezos and Musk would provide.</p>
                 
-                <input type="text" class="ai-input" placeholder="Should I learn Flask or Django first?">
-                <button id="ask-btn" style="background: white; color: #764ba2; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; margin-top: 0.5rem; cursor: pointer; font-weight: 600;">Ask AI</button>
+                <div class="ai-input-container">
+                    <input type="text" class="ai-input" placeholder="Ask: 'How can I monetize Python skills fastest?' or 'Best AI business for beginners?'" id="ai-question">
+                    <button class="ai-submit" id="ask-btn">Ask Mentor</button>
+                </div>
+                
+                <div class="sample-questions">
+                    Try: "What tech skill has highest ROI?" or "How to start with $100 budget?"
+                </div>
                 
                 <div class="ai-response" id="ai-response">
                     <p id="ai-text"></p>
@@ -437,14 +580,15 @@
         </div>
         
         <footer>
-            <p>Connect with me on social media</p>
+            <p>Build your digital empire from anywhere in the world</p>
             <div class="social-links">
-                <a href="https://twitter.com/" class="social-link" target="_blank">🐦</a>
-                <a href="https://linkedin.com/" class="social-link" target="_blank">🔗</a>
-                <a href="https://instagram.com/" class="social-link" target="_blank">📷</a>
-                <a href="https://youtube.com/" class="social-link" target="_blank">▶️</a>
+                <a href="https://x.com/RizwanA96852028" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/rizwan-ali-389660156/" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/KhanRiyazi" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.youtube.com/@ThisOne-007" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.producthunt.com/my/details/edit" class="social-link" target="_blank"><i class="fab fa-product-hunt"></i></a>
             </div>
-            <p style="margin-top: 1rem;">© 2023 Dev & Design Hub. All rights reserved.</p>
+            <p style="margin-top: 1.5rem;">© 2023 Entrepreneurial Dev Hub. All rights reserved.</p>
         </footer>
     </div>
 
@@ -466,42 +610,62 @@
             });
         });
         
-        // AI Decision Assistant
+        // AI Business Strategist
         const askBtn = document.getElementById('ask-btn');
-        const aiInput = document.querySelector('.ai-input');
+        const aiInput = document.getElementById('ai-question');
         const aiResponse = document.getElementById('ai-response');
         const aiText = document.getElementById('ai-text');
         
-        // Sample responses for the AI teacher
+        // Entrepreneur-focused AI responses
         const aiResponses = {
-            "should i learn flask or django first": "For beginners, Flask is often recommended first because it's more lightweight and easier to grasp. Once you understand Flask's concepts, Django will make more sense with its 'batteries-included' approach. Flask gives you more flexibility to learn concepts piece by piece.",
-            "how to improve my canva designs": "1) Use consistent color palettes 2) Maintain proper spacing and alignment 3) Limit fonts to 2-3 per design 4) Use high-quality images 5) Create visual hierarchy with size and contrast 6) Leverage Canva's templates as starting points 7) Study design principles like balance and proximity.",
-            "best python projects for portfolio": "Great portfolio projects include: 1) Web scraper 2) Data visualization dashboard 3) Automation script 4) REST API 5) Machine learning model with Flask interface 6) Discord/Slack bot 7) Portfolio website with Django. Focus on projects that solve real problems.",
-            "how to price my design services": "Consider: 1) Your experience level 2) Project complexity 3) Time required 4) Client budget 5) Market rates. Beginners might charge $15-30/hr or $50-200 per design. Intermediate designers $30-75/hr or $200-500 per project. Always provide clear scope and deliverables.",
-            "essential python libraries to learn": "Core libraries: 1) Requests (HTTP) 2) Pandas (data) 3) NumPy (math) 4) Matplotlib/Seaborn (visualization) 5) Flask/Django (web) 6) SQLAlchemy (database) 7) PyTest (testing) 8) BeautifulSoup (scraping). Start with ones relevant to your goals.",
-            "": "Please ask a question about Python development, Canva design, or career decisions."
+            "monetize python": "Top 5 Ways to Monetize Python Skills:\n\n1) **Automation Consulting** ($50-$300/hr)\n   - Businesses pay premium to automate manual processes\n\n2) **Build Micro-SaaS** ($500-$10K MRR)\n   - Solve niche problems with small web apps\n\n3) **Create AI Tools** (Revenue share)\n   - Partner with domain experts to build custom solutions\n\n4) **Teach Python for Business** ($1K-$5K/course)\n   - Focus on practical applications not just syntax\n\n5) **Develop APIs as Service** ($10-$100/month)\n   - Package useful functionality as API endpoints",
+            
+            "ai business": "Best AI Businesses to Start Now:\n\n🚀 **No-Code AI Solutions**\n- Use tools like Bubble + OpenAI to build without heavy coding\n- Example: AI content generators for specific niches\n\n📊 **Data Enhancement Services**\n- Clean/organize business data using Python scripts\n- Charge per project or monthly retainers\n\n🤖 **Chatbot Agencies**\n- Implement custom GPT solutions for small businesses\n- Recurring revenue from hosting/maintenance\n\n💡 **AI-Powered Market Research**\n- Scrape and analyze trends for investors/startups\n\n💰 **Low-Cost Start:** Begin with freelance platforms to validate ideas before productizing",
+            
+            "highest roi": "Tech Skills with Highest ROI in 2023:\n\n1) **AI Integration** (300%+ ROI)\n   - Adding AI features to existing businesses\n\n2) **Cloud Automation** (10-50x savings)\n   - Optimizing AWS/GCP costs for companies\n\n3) **No-Code Development** ($100-$500/hr)\n   - Building tools with platforms like Bubble\n\n4) **Data Pipeline Engineering** ($150-$400/hr)\n   - Connecting business systems with Python\n\n5) **Cybersecurity Basics** (Prevent $1M+ losses)\n   - Simple audits for small businesses\n\n🎯 **Strategy:** Combine technical skills with business understanding to 10x your value",
+            
+            "$100 budget": "Businesses to Start With $100:\n\n1) **AI-Powered Templates**\n   - Create Canva/Notion templates enhanced with AI prompts\n   - Sell on Etsy/Gumroad ($5-$50 each)\n\n2) **Micro-Consulting**\n   - Offer 1-hour Zoom calls solving specific tech problems\n   - Price at $97-$197 per session\n\n3) **API Wrapper Products**\n   - Build simple Python wrappers for popular APIs\n   - Sell access for $10-$50/month\n\n4) **Niche Newsletter**\n   - Curate AI/Python tips for specific industries\n   - Monetize with sponsors ($500-$5K)\n\n5) **Automation Scripts**\n   - Solve repetitive tasks for local businesses\n   - Charge $200-$500 per script",
+            
+            "passive income": "Best Passive Income Tech Strategies:\n\n💻 **Digital Products**\n- Python scripts, design assets, documentation templates\n- Once created, sell forever\n\n📚 **Content Libraries**\n- Build resource databases (cheatsheets, tutorials)\n- Charge monthly membership ($10-$50)\n\n🤖 **AI Models**\n- Train specialized models (images, text classification)\n- License access to businesses\n\n⚙️ **Hosted Services**\n- Automated reporting tools, monitoring dashboards\n- Recurring SaaS revenue\n\n📊 **Affiliate Tech Stack**\n- Recommend tools you use with tracking links\n- Earn 20-50% recurring commissions",
+            
+            "": "I'm your AI Business Strategist. Ask me about:\n\n- Monetizing tech skills\n- Building income streams\n- Entrepreneurial learning paths\n- Portfolio strategies\n- Startup ideas\n\nTry: \"What business can I build with my current skills?\" or \"How to price my services?\""
         };
         
         askBtn.addEventListener('click', () => {
             const question = aiInput.value.toLowerCase().trim();
             
-            if (question) {
-                // Simple keyword matching - a real implementation would use more advanced NLP
-                let response = "I recommend focusing on practical projects that interest you. Building real applications is the best way to learn.";
-                
-                for (const [key, value] of Object.entries(aiResponses)) {
-                    if (question.includes(key) && key !== "") {
-                        response = value;
-                        break;
+            // Show loading state
+            askBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Thinking';
+            askBtn.disabled = true;
+            
+            // Simulate AI processing delay
+            setTimeout(() => {
+                if (question) {
+                    let response = "Focus on solving real business problems with your skills. Identify pain points you can address, then validate by getting pre-orders or LOIs before building.";
+                    
+                    // Check for keywords in the question
+                    const keywords = Object.keys(aiResponses).filter(key => key && question.includes(key));
+                    
+                    if (keywords.length > 0) {
+                        // Use the most specific response (longest matching keyword)
+                        const bestMatch = keywords.reduce((a, b) => a.length > b.length ? a : b);
+                        response = aiResponses[bestMatch];
                     }
+                    
+                    aiText.innerHTML = response.replace(/\n/g, '<br>');
+                    aiResponse.style.display = 'block';
+                } else {
+                    aiText.innerHTML = aiResponses[""].replace(/\n/g, '<br>');
+                    aiResponse.style.display = 'block';
                 }
                 
-                aiText.textContent = response;
-                aiResponse.style.display = 'block';
-            } else {
-                aiText.textContent = aiResponses[""];
-                aiResponse.style.display = 'block';
-            }
+                // Reset button
+                askBtn.innerHTML = 'Ask Mentor';
+                askBtn.disabled = false;
+                
+                // Smooth scroll to response
+                aiResponse.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 1000);
         });
         
         // Allow pressing Enter to ask question
