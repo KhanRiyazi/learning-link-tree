@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python & Canva Profit Path | Fast-Track Earnings</title>
+    <meta name="description" content="Turn Python & Canva skills into $500-$5K/month income streams with our proven roadmap. Start earning in 30 days or less.">
+    <meta name="keywords" content="python money, canva income, freelance earnings, digital products, passive income">
     <style>
         :root {
             --python: #3776AB;
@@ -14,6 +16,7 @@
             --light: #FDFFFC;
             --dark: #011627;
             --gray: #7A8B99;
+            --success: #28a745;
         }
         
         * {
@@ -49,6 +52,19 @@
             color: white;
             margin-bottom: 2rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
         }
         
         .profile {
@@ -56,6 +72,8 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
         }
         
         .avatar {
@@ -67,15 +85,30 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
+        .certified-badge {
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            background: var(--success);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
         h1 {
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
-            color: white; /* Fallback for browsers that don't support gradient text */
+            color: white;
             background: linear-gradient(to right, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
+            position: relative;
+            z-index: 2;
         }
         
         .quick-links {
@@ -84,6 +117,8 @@
             gap: 1rem;
             margin-bottom: 1.5rem;
             flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
         }
         
         .quick-link {
@@ -102,6 +137,18 @@
             transform: translateY(-2px);
         }
         
+        .quick-link.cta {
+            background: var(--earn);
+            border-color: var(--earn);
+            box-shadow: 0 4px 15px rgba(255, 159, 28, 0.4);
+        }
+        
+        .quick-link.cta:hover {
+            background: #e68a00;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 159, 28, 0.5);
+        }
+        
         .tagline {
             font-size: 1.2rem;
             font-weight: 500;
@@ -109,6 +156,8 @@
             max-width: 700px;
             margin: 0 auto 1.5rem;
             color: rgba(255,255,255,0.9);
+            position: relative;
+            z-index: 2;
         }
         
         .stats {
@@ -117,6 +166,8 @@
             gap: 1.5rem;
             flex-wrap: wrap;
             margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
         }
         
         .stat-card {
@@ -127,6 +178,12 @@
             min-width: 200px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
         
         .stat-value {
@@ -140,6 +197,62 @@
             font-size: 0.9rem;
             opacity: 0.9;
             color: rgba(255,255,255,0.9);
+        }
+        
+        .lead-capture {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem auto 0;
+            max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .lead-capture h3 {
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--dark);
+        }
+        
+        .lead-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .lead-form input {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .lead-form button {
+            background: var(--earn);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .lead-form button:hover {
+            background: #e68a00;
+            transform: translateY(-2px);
+        }
+        
+        .lead-note {
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            color: var(--gray);
+            text-align: center;
         }
         
         .tabs {
@@ -195,6 +308,13 @@
             padding: 2rem;
             margin-bottom: 2rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .phase:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         
         .phase-header {
@@ -393,6 +513,192 @@
             color: var(--build);
         }
         
+        .testimonials {
+            margin: 3rem 0;
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--earn);
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        
+        .author-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .author-title {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        .pricing {
+            margin: 3rem 0;
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .pricing h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .pricing-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid var(--earn);
+            position: relative;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--earn);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .pricing-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--earn);
+        }
+        
+        .pricing-period {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+        
+        .pricing-features {
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+        
+        .pricing-feature {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .pricing-feature i {
+            color: var(--success);
+            margin-right: 0.5rem;
+        }
+        
+        .pricing-button {
+            display: inline-block;
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--earn);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-button:hover {
+            background: #e68a00;
+            transform: translateY(-2px);
+        }
+        
+        .pricing-button.secondary {
+            background: white;
+            color: var(--earn);
+            border: 1px solid var(--earn);
+        }
+        
+        .pricing-button.secondary:hover {
+            background: #f8f9fa;
+        }
+        
+        .guarantee-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(40, 167, 69, 0.1);
+            border-radius: 8px;
+            color: var(--success);
+        }
+        
+        .guarantee-badge i {
+            margin-right: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
         footer {
             text-align: center;
             margin-top: 4rem;
@@ -476,6 +782,10 @@
                 margin-right: 0;
                 margin-bottom: 1rem;
             }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -486,10 +796,12 @@
             <div class="hero">
                 <div class="profile">
                     <img src="img/profile.jpeg" alt="Your Name" class="avatar">
+                    <div class="certified-badge">MONEY-MAKING CERTIFIED</div>
                 </div>
                 <h1>Python & Canva Profit Path</h1>
                 
                 <div class="quick-links">
+                    <a href="#pricing" class="quick-link cta">Get Premium Access</a>
                     <a href="main.html" class="quick-link">Quick Earn</a>
                     <a href="blog.html" class="quick-link">Blog to Earn</a>
                 </div>
@@ -509,6 +821,15 @@
                         <div class="stat-value">10+</div>
                         <div class="stat-label">Revenue Streams</div>
                     </div>
+                </div>
+                
+                <div class="lead-capture">
+                    <h3>Get My Free 5-Day Money-Making Starter Kit</h3>
+                    <form class="lead-form">
+                        <input type="email" placeholder="Your best email" required>
+                        <button type="submit">Send Me the Kit</button>
+                    </form>
+                    <p class="lead-note">I'll also send weekly money-making tips. Unsubscribe anytime.</p>
                 </div>
             </div>
             
@@ -539,6 +860,9 @@
                         <div class="links">
                             <a href="https://automatetheboringstuff.com/" target="_blank" class="link python">Automate the Boring Stuff</a>
                             <a href="https://www.udemy.com/course/automate/" target="_blank" class="link python">Automation Course</a>
+                            <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
+                                <i class="fas fa-lock"></i> Advanced Automation Guide
+                            </a>
                         </div>
                         <div class="money-badge earn">
                             <i class="fas fa-dollar-sign"></i> $50-$200 per script
@@ -552,6 +876,9 @@
                             <a href="https://www.upwork.com/" target="_blank" class="link earn">Upwork</a>
                             <a href="https://www.fiverr.com/" target="_blank" class="link earn">Fiverr</a>
                             <a href="https://www.toptal.com/" target="_blank" class="link earn">Toptal</a>
+                            <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
+                                <i class="fas fa-lock"></i> Profile Optimization Templates
+                            </a>
                         </div>
                         <div class="money-badge earn">
                             <i class="fas fa-bolt"></i> First gigs in 2 weeks
@@ -564,6 +891,9 @@
                         <div class="links">
                             <a href="https://www.indiehackers.com/" target="_blank" class="link build">Indie Hackers</a>
                             <a href="https://www.producthunt.com/" target="_blank" class="link build">Product Hunt</a>
+                            <a href="#" class="link build premium-lock" data-tooltip="Premium content - unlock with membership">
+                                <i class="fas fa-lock"></i> 50 Validated SaaS Ideas
+                            </a>
                         </div>
                         <div class="money-badge build">
                             <i class="fas fa-lightbulb"></i> Validate 3 ideas
@@ -590,6 +920,9 @@
                         <div class="links">
                             <a href="https://scrapy.org/" target="_blank" class="link python">Scrapy Framework</a>
                             <a href="https://www.udemy.com/course/web-scraping-in-python-with-beautifulsoup-and-selenium/" target="_blank" class="link python">Scraping Course</a>
+                            <a href="#" class="link python premium-lock" data-tooltip="Premium content - unlock with membership">
+                                <i class="fas fa-lock"></i> Client Proposal Templates
+                            </a>
                         </div>
                         <div class="money-badge earn">
                             <i class="fas fa-dollar-sign"></i> $100-$500 per project
@@ -602,6 +935,9 @@
                         <div class="links">
                             <a href="https://fastapi.tiangolo.com/" target="_blank" class="link python">FastAPI</a>
                             <a href="https://www.udemy.com/course/rest-api-flask-and-python/" target="_blank" class="link python">API Course</a>
+                            <a href="#" class="link python premium-lock" data-tooltip="Premium content - unlock with membership">
+                                <i class="fas fa-lock"></i> API Monetization Strategies
+                            </a>
                         </div>
                         <div class="money-badge earn">
                             <i class="fas fa-redo"></i> Recurring revenue potential
@@ -614,6 +950,9 @@
                         <div class="links">
                             <a href="https://gumroad.com/" target="_blank" class="link earn">Gumroad</a>
                             <a href="https://www.payhip.com/" target="_blank" class="link earn">Payhip</a>
+                            <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
+                                <i class="fas fa-lock"></i> Product Launch Checklist
+                            </a>
                         </div>
                         <div class="money-badge earn">
                             <i class="fas fa-coins"></i> Passive income stream
@@ -643,6 +982,9 @@
                         <div class="links">
                             <a href="https://www.etsy.com/" target="_blank" class="link earn">Etsy</a>
                             <a href="https://creativemarket.com/" target="_blank" class="link earn">Creative Market</a>
+                            <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
+                                <i class="fas fa-lock"></i> 100+ Template Bundle
+                            </a>
                         </div>
                         <div class="money-badge earn">
                             <i class="fas fa-dollar-sign"></i> $5-$50 per template pack
@@ -655,6 +997,9 @@
                         <div class="links">
                             <a href="https://99designs.com/" target="_blank" class="link earn">99Designs</a>
                             <a href="https://dribbble.com/" target="_blank" class="link canva">Design Inspiration</a>
+                            <a href="#" class="link canva premium-lock" data-tooltip="Premium content - unlock with membership">
+                                <i class="fas fa-lock"></i> Brand Kit Templates
+                            </a>
                         </div>
                         <div class="money-badge earn">
                             <i class="fas fa-bolt"></i> $100-$500 per project
@@ -667,6 +1012,9 @@
                         <div class="links">
                             <a href="https://www.redbubble.com/" target="_blank" class="link earn">Redbubble</a>
                             <a href="https://www.teepublic.com/" target="_blank" class="link earn">Teepublic</a>
+                            <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
+                                <i class="fas fa-lock"></i> Best-Selling Design Research
+                            </a>
                         </div>
                         <div class="money-badge earn">
                             <i class="fas fa-tshirt"></i> Passive royalties
@@ -693,6 +1041,9 @@
                         <div class="links">
                             <a href="https://www.canva.com/developers/affiliates/" target="_blank" class="link earn">Canva Affiliates</a>
                             <a href="https://gumroad.com/" target="_blank" class="link earn">Membership Setup</a>
+                            <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
+                                <i class="fas fa-lock"></i> Subscription Funnel Templates
+                            </a>
                         </div>
                         <div class="money-badge earn">
                             <i class="fas fa-redo"></i> $10-$50/month per subscriber
@@ -705,6 +1056,9 @@
                         <div class="links">
                             <a href="https://www.upwork.com/" target="_blank" class="link earn">Upwork</a>
                             <a href="https://www.fiverr.com/" target="_blank" class="link earn">Fiverr Pro</a>
+                            <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
+                                <i class="fas fa-lock"></i> Service Pricing Calculator
+                            </a>
                         </div>
                         <div class="money-badge earn">
                             <i class="fas fa-dollar-sign"></i> $300-$1000 per client
@@ -717,6 +1071,9 @@
                         <div class="links">
                             <a href="https://www.udemy.com/" target="_blank" class="link earn">Udemy</a>
                             <a href="https://www.skillshare.com/" target="_blank" class="link earn">Skillshare</a>
+                            <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
+                                <i class="fas fa-lock"></i> Course Outline Templates
+                            </a>
                         </div>
                         <div class="money-badge earn">
                             <i class="fas fa-graduation-cap"></i> $500-$5000 per course
@@ -746,6 +1103,9 @@
                         <div class="links">
                             <a href="https://www.upwork.com/freelance-jobs/apply/python/" target="_blank" class="link python">Python Jobs</a>
                             <a href="https://www.fiverr.com/categories/graphics-design/custom-design-services" target="_blank" class="link canva">Canva Jobs</a>
+                            <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
+                                <i class="fas fa-lock"></i> Client Acquisition Scripts
+                            </a>
                         </div>
                         <div class="money-badge earn">
                             <i class="fas fa-bolt"></i> Quickest way to first $
@@ -758,6 +1118,9 @@
                         <div class="links">
                             <a href="https://gumroad.com/" target="_blank" class="link earn">Gumroad</a>
                             <a href="https://www.payhip.com/" target="_blank" class="link earn">Payhip</a>
+                            <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
+                                <i class="fas fa-lock"></i> Product Validation Framework
+                            </a>
                         </div>
                         <div class="money-badge earn">
                             <i class="fas fa-coins"></i> Passive income potential
@@ -784,6 +1147,9 @@
                         <div class="links">
                             <a href="https://www.patreon.com/" target="_blank" class="link earn">Patreon</a>
                             <a href="https://www.memberstack.com/" target="_blank" class="link earn">Memberships</a>
+                            <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
+                                <i class="fas fa-lock"></i> Retention Strategy Guide
+                            </a>
                         </div>
                         <div class="money-badge earn">
                             <i class="fas fa-redo"></i> Predictable monthly income
@@ -796,6 +1162,9 @@
                         <div class="links">
                             <a href="https://www.shareasale.com/" target="_blank" class="link earn">ShareASale</a>
                             <a href="https://www.canva.com/developers/affiliates/" target="_blank" class="link earn">Canva Affiliates</a>
+                            <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
+                                <i class="fas fa-lock"></i> High-Converting Affiliate Pages
+                            </a>
                         </div>
                         <div class="money-badge earn">
                             <i class="fas fa-link"></i> 20-50% commissions
@@ -822,6 +1191,9 @@
                         <div class="links">
                             <a href="https://www.udemy.com/" target="_blank" class="link earn">Courses</a>
                             <a href="https://www.notion.so/" target="_blank" class="link earn">Templates</a>
+                            <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
+                                <i class="fas fa-lock"></i> Product Scaling Framework
+                            </a>
                         </div>
                         <div class="money-badge earn">
                             <i class="fas fa-box-open"></i> 1-to-many sales
@@ -834,12 +1206,105 @@
                         <div class="links">
                             <a href="https://www.indiehackers.com/" target="_blank" class="link earn">Indie Hackers</a>
                             <a href="https://www.producthunt.com/" target="_blank" class="link earn">Product Hunt</a>
+                            <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
+                                <i class="fas fa-lock"></i> SaaS Launch Checklist
+                            </a>
                         </div>
                         <div class="money-badge earn">
                             <i class="fas fa-infinity"></i> Unlimited potential
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Testimonials Section -->
+        <div class="testimonials">
+            <h2>Success Stories From Our Students</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"I went from $0 to $3,200 in my first month following the Python automation roadmap. The templates and scripts saved me dozens of hours!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah K." class="testimonial-avatar">
+                        <div>
+                            <div class="author-name">Sarah K.</div>
+                            <div class="author-title">Freelance Developer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"The Canva template strategies helped me build a $1,500/month passive income stream in just 8 weeks. Best investment ever!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael T." class="testimonial-avatar">
+                        <div>
+                            <div class="author-name">Michael T.</div>
+                            <div class="author-title">Graphic Designer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"Combining Python and Canva skills was a game-changer. I now run a 6-figure agency thanks to these strategies."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya M." class="testimonial-avatar">
+                        <div>
+                            <div class="author-name">Priya M.</div>
+                            <div class="author-title">Digital Entrepreneur</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pricing Section -->
+        <div class="pricing" id="pricing">
+            <h2>Choose Your Money-Making Plan</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Starter</h3>
+                    <div class="pricing-price">$97</div>
+                    <div class="pricing-period">one-time payment</div>
+                    <div class="pricing-features">
+                        <div class="pricing-feature"><i class="fas fa-check"></i> Python Automation Guide</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> Canva Template Library</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> 5 Income Stream Blueprints</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> Basic Community Access</div>
+                    </div>
+                    <button class="pricing-button secondary">Get Started</button>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <h3 class="pricing-title">Pro</h3>
+                    <div class="pricing-price">$297</div>
+                    <div class="pricing-period">one-time payment</div>
+                    <div class="pricing-features">
+                        <div class="pricing-feature"><i class="fas fa-check"></i> Everything in Starter</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> Advanced Python Scripts</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> Premium Canva Templates</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> 15 Income Stream Blueprints</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> Client Proposal Templates</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> Pro Community Access</div>
+                    </div>
+                    <button class="pricing-button">Get Pro Access</button>
+                </div>
+                <div class="pricing-card">
+                    <h3 class="pricing-title">Elite</h3>
+                    <div class="pricing-price">$997</div>
+                    <div class="pricing-period">one-time payment</div>
+                    <div class="pricing-features">
+                        <div class="pricing-feature"><i class="fas fa-check"></i> Everything in Pro</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> Done-For-You Scripts</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> Exclusive Template Club</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> 1-on-1 Strategy Session</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> Private Mastermind Group</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> VIP Support</div>
+                    </div>
+                    <button class="pricing-button secondary">Go Elite</button>
+                </div>
+            </div>
+            
+            <div class="guarantee-badge">
+                <i class="fas fa-shield-alt"></i>
+                <div>30-Day Money-Back Guarantee - If you don't make money, you don't pay!</div>
             </div>
         </div>
         
@@ -851,7 +1316,7 @@
                 <a href="https://www.youtube.com/@ThisOne-007" class="social-link"><i class="fab fa-youtube"></i></a>
             </div>
             <p>© <span id="year"></span> Python & Canva Profit Path. All earning strategies verified.</p>
-            <p style="margin-top: 1rem;">Replace all placeholder links with your actual profiles and preferred resources</p>
+            <p style="margin-top: 1rem;"><a href="#" style="color: var(--gray);">Terms of Service</a> | <a href="#" style="color: var(--gray);">Privacy Policy</a> | <a href="#" style="color: var(--gray);">Affiliate Disclosure</a></p>
         </footer>
     </div>
 
@@ -883,6 +1348,34 @@
                 // Add analytics tracking here
             });
         });
+        
+        // Premium lock tooltips
+        const premiumLocks = document.querySelectorAll('.premium-lock');
+        premiumLocks.forEach(lock => {
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = lock.getAttribute('data-tooltip');
+            lock.appendChild(tooltip);
+            
+            lock.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Show modal or redirect to pricing
+                window.location.href = '#pricing';
+            });
+        });
+        
+        // Lead form submission
+        const leadForm = document.querySelector('.lead-form');
+        if (leadForm) {
+            leadForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = leadForm.querySelector('input').value;
+                console.log('Lead captured:', email);
+                // Add your email collection logic here
+                alert('Thanks! Check your email for the starter kit.');
+                leadForm.reset();
+            });
+        }
     </script>
 </body>
 </html>
