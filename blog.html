@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python & Canva Profit Path | Start Earning Today</title>
+    <style>
+        :root {
+            --must: #e74c3c;
+            --should: #3498db;
+            --could: #2ecc71;
+            --wont: #95a5a6;
+            --bg: #f8f9fa;
+            --text: #2c3e50;
+            --light: #ecf0f1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        .moscow-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .moscow-tab {
+            padding: 10px 20px;
+            margin: 0 5px 10px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .moscow-tab.active {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .must {
+            background-color: var(--must);
+            color: white;
+        }
+        
+        .should {
+            background-color: var(--should);
+            color: white;
+        }
+        
+        .could {
+            background-color: var(--could);
+            color: white;
+        }
+        
+        .wont {
+            background-color: var(--wont);
+            color: white;
+        }
+        
+        .links-container {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .links-container.active {
+            display: block;
+        }
+        
+        .link-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .link-card.must::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--must);
+        }
+        
+        .link-card.should::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--should);
+        }
+        
+        .link-card.could::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--could);
+        }
+        
+        .link-card.wont::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--wont);
+        }
+        
+        .link-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--text);
+        }
+        
+        .link-desc {
+            font-size: 0.95rem;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+        
+        .link-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: var(--light);
+            color: var(--text);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .link-card.must .link-btn {
+            background-color: var(--must);
+            color: white;
+        }
+        
+        .link-card.should .link-btn {
+            background-color: var(--should);
+            color: white;
+        }
+        
+        .link-card.could .link-btn {
+            background-color: var(--could);
+            color: white;
+        }
+        
+        .link-card.wont .link-btn {
+            background-color: var(--wont);
+            color: white;
+        }
+        
+        .link-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            border-radius: 4px;
+            background: #f1c40f;
+            color: #000;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .moscow-tab {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .link-card {
+                padding: 15px;
+            }
+            
+            .link-title {
+                font-size: 1.1rem;
+            }
+            
+            .link-btn {
+                display: block;
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="your-profile-image.jpg" alt="Your Name" class="profile-img">
+            <h1>Your Python & Canva Profit Path</h1>
+            <p class="tagline">Click any link below to start earning today</p>
+        </header>
+        
+        <div class="moscow-tabs">
+            <div class="moscow-tab must active" data-tab="must">Must Do Now</div>
+            <div class="moscow-tab should" data-tab="should">Should Do Next</div>
+            <div class="moscow-tab could" data-tab="could">Could Do Later</div>
+            <div class="moscow-tab wont" data-tab="wont">Won't Do</div>
+        </div>
+        
+        <!-- MUST DO NOW - Immediate Earning Paths -->
+        <div class="links-container active" id="must">
+            <!-- Python Earning Paths -->
+            <div class="link-card must">
+                <div class="link-title">Python Freelancing <span class="badge">Fast Cash</span></div>
+                <div class="link-desc">Start earning within 24 hours on these platforms:</div>
+                <a href="https://www.fiverr.com/" target="_blank" class="link-btn">Fiverr</a>
+                <a href="https://www.upwork.com/" target="_blank" class="link-btn">Upwork</a>
+                <a href="https://www.toptal.com/" target="_blank" class="link-btn">Toptal</a>
+            </div>
+            
+            <div class="link-card must">
+                <div class="link-title">Canva Template Selling <span class="badge">Passive Income</span></div>
+                <div class="link-desc">Sell your designs on these marketplaces:</div>
+                <a href="https://www.etsy.com/" target="_blank" class="link-btn">Etsy</a>
+                <a href="https://creativemarket.com/" target="_blank" class="link-btn">Creative Market</a>
+                <a href="https://www.template.net/editable/canva/" target="_blank" class="link-btn">Template.net</a>
+            </div>
+            
+            <div class="link-card must">
+                <div class="link-title">Micro-Services <span class="badge">Quick Wins</span></div>
+                <div class="link-desc">Sell small Python scripts or Canva bundles:</div>
+                <a href="https://gumroad.com/" target="_blank" class="link-btn">Gumroad</a>
+                <a href="https://www.payhip.com/" target="_blank" class="link-btn">Payhip</a>
+            </div>
+        </div>
+        
+        <!-- SHOULD DO NEXT - Strategic Earning Paths -->
+        <div class="links-container" id="should">
+            <div class="link-card should">
+                <div class="link-title">Python Content Creation <span class="badge">Long-Term</span></div>
+                <div class="link-desc">Build audience & monetize:</div>
+                <a href="https://www.youtube.com/" target="_blank" class="link-btn">YouTube</a>
+                <a href="https://medium.com/" target="_blank" class="link-btn">Medium</a>
+                <a href="https://dev.to/" target="_blank" class="link-btn">Dev.to</a>
+            </div>
+            
+            <div class="link-card should">
+                <div class="link-title">Canva Affiliate Program <span class="blank" class="link-btn">Canva Affiliates</a>
+                <a href="https://www.shareasale.com/join/1234" target="_blank" class="link-btn">ShareASale</a>
+            </div>
+            
+            <div class="link-card should">
+                <div class="link-title">Digital Products <span class="badge">Scalable</span></div>
+                <div class="link-desc">Create once, sell forever:</div>
+                <a href="https://www.udemy.com/" target="_blank" class="link-btn">Udemy Courses</a>
+                <a href="https://www.teachable.com/" target="_blank" class="link-btn">Teachable</a>
+                <a href="https://www.notion.so/" target="_blank" class="link-btn">Notion Templates</a>
+            </div>
+        </div>
+        
+        <!-- COULD DO LATER - Advanced Earning Paths -->
+        <div class="links-container" id="could">
+            <div class="link-card could">
+                <div class="link-title">Python SaaS Products <span class="badge">High Reward</span></div>
+                <div class="link-desc">Build your own software:</div>
+                <a href="https://www.digitalocean.com/" target="_blank" class="link-btn">Hosting</a>
+                <a href="https://stripe.com/" target="_blank" class="link-btn">Payments</a>
+            </div>
+            
+            <div class="link-card could">
+                <div class="link-title">Canva Team Solutions <span class="badge">Corporate</span></div>
+                <div class="link-desc">Enterprise-level services:</div>
+                <a href="https://www.canva.com/enterprise/" target="_blank" class="link-btn">Canva Enterprise</a>
+                <a href="https://www.linkedin.com/sales/" target="_blank" class="link-btn">LinkedIn Sales</a>
+            </div>
+        </div>
+        
+        <!-- WON'T DO - Not Recommended -->
+        <div class="links-container" id="wont">
+            <div class="link-card wont">
+                <div class="link-title">Content Farms <span class="badge">Low Value</span></div>
+                <div class="link-desc">These waste your skills:</div>
+                <a href="#" class="link-btn">Fiverr $5 Gigs</a>
+                <a href="#" class="link-btn">Content Mills</a>
+            </div>
+            
+            <div class="link-card wont">
+                <div class="link-title">Spec Work <span class="badge">Risky</span></div>
+                <div class="link-desc">Avoid these practices:</div>
+                <a href="#" class="link-btn">Free Work for "Exposure"</a>
+                <a href="#" class="link-btn">Unpaid Trials</a>
+            </div>
+        </div>
+        
+        <section id="contact" style="margin-top: 40px; background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <h2 style="text-align: center; margin-bottom: 20px;">Need Personalized Help?</h2>
+            <div style="text-align: center;">
+                <a href="mailto:your@email.com" style="display: inline-block; padding: 12px 30px; background-color: #3498db; color: white; border-radius: 5px; text-decoration: none; font-weight: 500; margin: 10px;">Email Consultation</a>
+                <a href="https://calendly.com/yourlink" style="display: inline-block; padding: 12px 30px; background-color: #2ecc71; color: white; border-radius: 5px; text-decoration: none; font-weight: 500; margin: 10px;">Book 1:1 Call</a>
+            </div>
+        </section>
+        
+        <footer>
+            <p>© <span id="year"></span> Your Name. All profit paths verified.</p>
+            <p style="margin-top: 10px;">
+                <a href="#" style="color: #3498db; text-decoration: none; margin: 0 10px;">Terms</a>
+                <a href="#" style="color: #3498db; text-decoration: none; margin: 0 10px;">Privacy</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year
+            document.getElementById('year').textContent = new Date().getFullYear();
+            
+            // Tab functionality
+            const tabs = document.querySelectorAll('.moscow-tab');
+            const linkContainers = document.querySelectorAll('.links-container');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    linkContainers.forEach(c => c.classList.remove('active'));
+                    
+                    this.classList.add('active');
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Track outbound links
+            document.querySelectorAll('a[target="_blank"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    console.log('Outbound link clicked:', this.href);
+                    // Add analytics tracking here
+                });
+            });
+        });
+    </script>
+</body>
+</html>
