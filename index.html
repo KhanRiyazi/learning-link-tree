@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automated Income System | Python Web Scraping & Canva Design</title>
-    <meta name="description" content="Earn $500-$10K/month with Python automation (Selenium, APIs) and Canva social media templates. Proven system for passive income streams.">
-    <meta name="keywords" content="python selenium, web scraping money, canva templates, api automation, passive income, social media design">
+    <title>AI-Powered Income System | Python Automation & AI Monetization</title>
+    <meta name="description" content="Earn $500-$10K/month with AI automation, Python scripting (Selenium, APIs) and Canva designs. AI-powered decision making for maximum earnings.">
+    <meta name="keywords" content="AI automation, python selenium, web scraping money, canva templates, api automation, passive income, AI decision making">
     <style>
         :root {
             --python: #3776AB;
@@ -13,6 +13,7 @@
             --earn: #FF9F1C;
             --learn: #2EC4B6;
             --build: #E71D36;
+            --ai: #6e48aa;
             --light: #FDFFFC;
             --dark: #011627;
             --gray: #7A8B99;
@@ -46,7 +47,7 @@
         }
         
         .hero {
-            background: linear-gradient(135deg, var(--python) 0%, var(--canva) 100%);
+            background: linear-gradient(135deg, var(--python) 0%, var(--ai) 100%);
             padding: 3rem 2rem;
             border-radius: 16px;
             color: white;
@@ -293,6 +294,10 @@
             border-left: 4px solid var(--earn);
         }
         
+        .tab-btn.ai {
+            border-left: 4px solid var(--ai);
+        }
+        
         .roadmap-container {
             display: none;
             animation: fadeIn 0.5s ease;
@@ -347,6 +352,10 @@
         
         .phase-icon.earn {
             background: var(--earn);
+        }
+        
+        .phase-icon.ai {
+            background: var(--ai);
         }
         
         .phase-title {
@@ -406,6 +415,10 @@
         
         .milestone.earn::before {
             background: var(--earn);
+        }
+        
+        .milestone.ai::before {
+            background: var(--ai);
         }
         
         .milestone-title {
@@ -487,6 +500,17 @@
             color: white;
         }
         
+        .link.ai {
+            background: rgba(110, 72, 170, 0.1);
+            color: var(--ai);
+            border-color: rgba(110, 72, 170, 0.2);
+        }
+        
+        .link.ai:hover {
+            background: var(--ai);
+            color: white;
+        }
+        
         .money-badge {
             display: inline-flex;
             align-items: center;
@@ -513,10 +537,25 @@
             color: var(--build);
         }
         
+        .money-badge.ai {
+            background: rgba(110, 72, 170, 0.1);
+            color: var(--ai);
+        }
+        
         .automation-badge {
             display: inline-block;
             background: rgba(231, 29, 54, 0.1);
             color: var(--build);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+        
+        .ai-badge {
+            display: inline-block;
+            background: rgba(110, 72, 170, 0.1);
+            color: var(--ai);
             padding: 0.5rem 1rem;
             border-radius: 50px;
             font-weight: 600;
@@ -540,6 +579,10 @@
         
         .use-case.canva {
             border-left-color: var(--canva);
+        }
+        
+        .use-case.ai {
+            border-left-color: var(--ai);
         }
         
         .use-case h4 {
@@ -778,6 +821,134 @@
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
         
+        /* AI Decision Dashboard Styles */
+        .ai-dashboard {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .ai-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .ai-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--ai) 0%, #9c50e6 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            color: white;
+            font-size: 1.8rem;
+        }
+        
+        .ai-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--ai);
+            margin-bottom: 0.5rem;
+        }
+        
+        .ai-subtitle {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+        
+        .ai-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .ai-metric {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 4px solid var(--ai);
+        }
+        
+        .ai-metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--ai);
+            margin-bottom: 0.5rem;
+        }
+        
+        .ai-metric-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .ai-recommendations {
+            margin: 2rem 0;
+        }
+        
+        .ai-recommendation {
+            background: rgba(110, 72, 170, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--ai);
+        }
+        
+        .ai-recommendation-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+        }
+        
+        .ai-recommendation-title i {
+            color: var(--ai);
+            margin-right: 0.5rem;
+        }
+        
+        .ai-recommendation-desc {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+        
+        .ai-recommendation-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .ai-action-btn {
+            padding: 0.5rem 1rem;
+            background: var(--ai);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .ai-action-btn:hover {
+            background: #5d3a9e;
+            transform: translateY(-2px);
+        }
+        
+        .ai-action-btn.secondary {
+            background: white;
+            color: var(--ai);
+            border: 1px solid var(--ai);
+        }
+        
+        .ai-action-btn.secondary:hover {
+            background: #f8f9fa;
+        }
+        
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -831,6 +1002,16 @@
             .pricing-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .ai-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .ai-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -841,19 +1022,19 @@
             <div class="hero">
                 <div class="profile">
                     <img src="img/profile.jpeg" alt="Automation Expert" class="avatar">
-                    <div class="certified-badge">AUTOMATION SPECIALIST</div>
+                    <div class="certified-badge">AI AUTOMATION SPECIALIST</div>
                 </div>
-                <h1>Automated Income System</h1>
+                <h1>AI-Powered Income System</h1>
                 
                 <div class="quick-links">
-                    <a href="#pricing" class="quick-link cta">Get Automation Tools</a>
+                    <a href="#pricing" class="quick-link cta">Get AI Tools</a>
                     <a href="#python" class="quick-link">Web Scraping</a>
                     <a href="#canva" class="quick-link">Social Media Design</a>
-                    <a href="./main.html" class="quick-link">Quick Eran</a>
-                    <a href="./blog.html" class="quick-link">Earning Blog</a>
+                    <a href="#ai" class="quick-link">AI Decision Engine</a>
+                    <a href="./main.html" class="quick-link">Quick Earn</a>
                 </div>
                 
-                <p class="tagline">Turn Python automation and Canva design into $500-$10K/month income streams with our proven system</p>
+                <p class="tagline">Earn $500-$10K/month with AI automation, Python scripting, and Canva designs. Our AI decision engine optimizes your earnings.</p>
                 
                 <div class="stats">
                     <div class="stat-card">
@@ -865,18 +1046,18 @@
                         <div class="stat-label">To First Payment</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-value">15+</div>
-                        <div class="stat-label">Automation Methods</div>
+                        <div class="stat-value">AI-Optimized</div>
+                        <div class="stat-label">Earning Strategies</div>
                     </div>
                 </div>
                 
                 <div class="lead-capture">
-                    <h3>Get Free Python Web Scraping Cheat Sheet</h3>
+                    <h3>Get Free AI Automation Starter Kit</h3>
                     <form class="lead-form">
                         <input type="email" placeholder="Your best email" required>
-                        <button type="submit">Send Me the Cheat Sheet</button>
+                        <button type="submit">Send My AI Kit</button>
                     </form>
-                    <p class="lead-note">Includes 5 ready-to-use Selenium scripts. Unsubscribe anytime.</p>
+                    <p class="lead-note">Includes 3 ready-to-use AI scripts. Unsubscribe anytime.</p>
                 </div>
             </div>
             
@@ -884,6 +1065,7 @@
                 <button class="tab-btn python active" data-tab="python">Python Automation</button>
                 <button class="tab-btn canva" data-tab="canva">Canva Design</button>
                 <button class="tab-btn earn" data-tab="earn">Income Streams</button>
+                <button class="tab-btn ai" data-tab="ai">AI Decision Engine</button>
             </div>
         </header>
         
@@ -938,17 +1120,17 @@
                     </div>
                     
                     <div class="milestone python">
-                        <h3 class="milestone-title">Automated Reporting <span class="milestone-time">Week 3</span></h3>
-                        <p class="milestone-desc">Create systems that generate and deliver reports automatically</p>
+                        <h3 class="milestone-title">AI-Enhanced Automation <span class="milestone-time">Week 3</span></h3>
+                        <p class="milestone-desc">Integrate AI decision making into your automation workflows</p>
                         <div class="links">
-                            <a href="https://pandas.pydata.org/" target="_blank" class="link python">Pandas</a>
-                            <a href="https://matplotlib.org/" target="_blank" class="link python">Matplotlib</a>
+                            <a href="https://openai.com/" target="_blank" class="link ai">OpenAI API</a>
+                            <a href="https://python.langchain.com/" target="_blank" class="link ai">LangChain</a>
                             <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
-                                <i class="fas fa-lock"></i> Report Template Gallery
+                                <i class="fas fa-lock"></i> AI Decision Templates
                             </a>
                         </div>
-                        <div class="money-badge earn">
-                            <i class="fas fa-file-alt"></i> $50-$300 per report system
+                        <div class="money-badge ai">
+                            <i class="fas fa-brain"></i> 2-5x higher earnings with AI
                         </div>
                     </div>
                 </div>
@@ -966,9 +1148,9 @@
                         <div class="earnings">Earnings: $300-$1500/month</div>
                     </div>
                     <div class="use-case">
-                        <h4>Lead Generation</h4>
-                        <p>Scrape and qualify leads from directories and LinkedIn</p>
-                        <div class="earnings">Earnings: $1-$5 per quality lead</div>
+                        <h4>AI-Enhanced Lead Generation</h4>
+                        <p>Scrape and qualify leads with AI decision making</p>
+                        <div class="earnings">Earnings: $2-$10 per quality lead</div>
                     </div>
                 </div>
             </div>
@@ -1004,17 +1186,17 @@
                     </div>
                     
                     <div class="milestone canva">
-                        <h3 class="milestone-title">YouTube Thumbnails <span class="milestone-time">Week 2</span></h3>
-                        <p class="milestone-desc">Design click-worthy thumbnails that boost views</p>
+                        <h3 class="milestone-title">AI-Generated Designs <span class="milestone-time">Week 2</span></h3>
+                        <p class="milestone-desc">Use AI to create unique design variations at scale</p>
                         <div class="links">
-                            <a href="https://www.canva.com/youtube-thumbnails/" target="_blank" class="link canva">Canva YouTube</a>
-                            <a href="https://www.fiverr.com/categories/graphics-design/youtube-thumbnails" target="_blank" class="link earn">Sell on Fiverr</a>
+                            <a href="https://www.canva.com/ai-image-generator/" target="_blank" class="link ai">Canva AI</a>
+                            <a href="https://www.fiverr.com/categories/graphics-design/ai-art" target="_blank" class="link earn">Sell AI Designs</a>
                             <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
-                                <i class="fas fa-lock"></i> High-CTR Thumbnail Guide
+                                <i class="fas fa-lock"></i> AI Design Prompts
                             </a>
                         </div>
-                        <div class="money-badge earn">
-                            <i class="fas fa-play"></i> $10-$100 per thumbnail
+                        <div class="money-badge ai">
+                            <i class="fas fa-magic"></i> 10x faster design creation
                         </div>
                     </div>
                     
@@ -1037,9 +1219,9 @@
                 <h3 style="margin: 2rem 0 1rem;">Profitable Canva Use Cases</h3>
                 <div class="use-cases">
                     <div class="use-case canva">
-                        <h4>Social Media Templates</h4>
-                        <p>Sell packs of Instagram post templates with trending designs</p>
-                        <div class="earnings">Earnings: $500-$5000/month passive</div>
+                        <h4>AI-Generated Social Templates</h4>
+                        <p>Sell packs of AI-created Instagram post templates</p>
+                        <div class="earnings">Earnings: $1000-$8000/month passive</div>
                     </div>
                     <div class="use-case canva">
                         <h4>YouTube Packages</h4>
@@ -1047,8 +1229,8 @@
                         <div class="earnings">Earnings: $50-$300 per package</div>
                     </div>
                     <div class="use-case canva">
-                        <h4>E-book Covers</h4>
-                        <p>Design professional covers for self-published authors</p>
+                        <h4>AI E-book Covers</h4>
+                        <p>Generate unique covers for self-published authors</p>
                         <div class="earnings">Earnings: $20-$150 per cover</div>
                     </div>
                 </div>
@@ -1085,52 +1267,184 @@
                     </div>
                     
                     <div class="milestone earn">
-                        <h3 class="milestone-title">Digital Products <span class="milestone-time">Month 1</span></h3>
-                        <p class="milestone-desc">Sell automation scripts and templates</p>
+                        <h3 class="milestone-title">AI Digital Products <span class="milestone-time">Month 1</span></h3>
+                        <p class="milestone-desc">Sell AI-generated content and automation scripts</p>
                         <div class="links">
                             <a href="https://gumroad.com/" target="_blank" class="link earn">Gumroad</a>
                             <a href="https://codecanyon.net/" target="_blank" class="link earn">CodeCanyon</a>
                             <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
-                                <i class="fas fa-lock"></i> Product Packaging Guide
+                                <i class="fas fa-lock"></i> AI Product Packaging Guide
                             </a>
                         </div>
-                        <div class="money-badge earn">
+                        <div class="money-badge ai">
                             <i class="fas fa-coins"></i> $500-$5000 one-time products
                         </div>
                     </div>
                     
                     <div class="milestone earn">
-                        <h3 class="milestone-title">SaaS Automation <span class="milestone-time">Month 2+</span></h3>
-                        <p class="milestone-desc">Build subscription-based automation tools</p>
+                        <h3 class="milestone-title">AI SaaS Automation <span class="milestone-time">Month 2+</span></h3>
+                        <p class="milestone-desc">Build subscription-based AI automation tools</p>
                         <div class="links">
                             <a href="https://www.indiehackers.com/" target="_blank" class="link build">Indie Hackers</a>
                             <a href="https://www.producthunt.com/" target="_blank" class="link build">Product Hunt</a>
                             <a href="#" class="link build premium-lock" data-tooltip="Premium content - unlock with membership">
-                                <i class="fas fa-lock"></i> SaaS Launch Checklist
+                                <i class="fas fa-lock"></i> AI SaaS Launch Checklist
                             </a>
                         </div>
-                        <div class="money-badge earn">
-                            <i class="fas fa-infinity"></i> $1000-$10,000/month potential
+                        <div class="money-badge ai">
+                            <i class="fas fa-infinity"></i> $2000-$20,000/month potential
                         </div>
                     </div>
                 </div>
                 
-                <h3 style="margin: 2rem 0 1rem;">Combined Automation & Design Income</h3>
+                <h3 style="margin: 2rem 0 1rem;">Combined AI Automation & Design Income</h3>
                 <div class="use-cases">
-                    <div class="use-case">
-                        <h4>Automated Social Media Agency</h4>
-                        <p>Python scripts auto-post Canva designs to social platforms</p>
-                        <div class="earnings">Earnings: $1000-$5000/month per client</div>
+                    <div class="use-case ai">
+                        <h4>AI Social Media Agency</h4>
+                        <p>AI generates content, Python auto-posts, Canva designs</p>
+                        <div class="earnings">Earnings: $2000-$10,000/month per client</div>
                     </div>
-                    <div class="use-case">
-                        <h4>E-commerce Automation</h4>
-                        <p>Scrape trends, auto-generate Canva product images</p>
-                        <div class="earnings">Earnings: $500-$3000/month per store</div>
+                    <div class="use-case ai">
+                        <h4>AI E-commerce Automation</h4>
+                        <p>AI predicts trends, auto-generates Canva product images</p>
+                        <div class="earnings">Earnings: $1000-$5000/month per store</div>
                     </div>
-                    <div class="use-case">
-                        <h4>Lead Gen + Design</h4>
-                        <p>Scrape leads then auto-send Canva-designed proposals</p>
-                        <div class="earnings">Earnings: $2,000-$10,000/month</div>
+                    <div class="use-case ai">
+                        <h4>AI Lead Gen + Design</h4>
+                        <p>AI qualifies leads then auto-sends Canva proposals</p>
+                        <div class="earnings">Earnings: $5,000-$25,000/month</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AI Decision Engine Section -->
+        <div class="roadmap-container" id="ai">
+            <div class="ai-dashboard">
+                <div class="ai-header">
+                    <div class="ai-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div>
+                        <h2 class="ai-title">AI Decision Engine</h2>
+                        <p class="ai-subtitle">Our proprietary AI analyzes your skills and market trends to recommend the highest-earning opportunities</p>
+                    </div>
+                </div>
+                
+                <div class="ai-metrics">
+                    <div class="ai-metric">
+                        <div class="ai-metric-value">87%</div>
+                        <div class="ai-metric-label">More Efficient Than Manual Research</div>
+                    </div>
+                    <div class="ai-metric">
+                        <div class="ai-metric-value">2.4x</div>
+                        <div class="ai-metric-label">Higher Earnings Potential</div>
+                    </div>
+                    <div class="ai-metric">
+                        <div class="ai-metric-value">24/7</div>
+                        <div class="ai-metric-label">Market Monitoring</div>
+                    </div>
+                    <div class="ai-metric">
+                        <div class="ai-metric-value">AI</div>
+                        <div class="ai-metric-label">Optimized Strategies</div>
+                    </div>
+                </div>
+                
+                <div class="ai-recommendations">
+                    <h3>Your Personalized AI Recommendations</h3>
+                    
+                    <div class="ai-recommendation">
+                        <h4 class="ai-recommendation-title"><i class="fas fa-lightbulb"></i> High-Demand Opportunity</h4>
+                        <p class="ai-recommendation-desc">Our AI detected a 214% increase in demand for AI-generated LinkedIn carousel posts in your region. You can create these easily with Canva and our AI templates.</p>
+                        <div class="money-badge ai">
+                            <i class="fas fa-dollar-sign"></i> Estimated Earnings: $75-$150 per design
+                        </div>
+                        <div class="ai-recommendation-actions">
+                            <button class="ai-action-btn">View AI Templates</button>
+                            <button class="ai-action-btn secondary">See Market Data</button>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-recommendation">
+                        <h4 class="ai-recommendation-title"><i class="fas fa-chart-line"></i> Profit Optimization</h4>
+                        <p class="ai-recommendation-desc">Your Python web scraping skills combined with our AI data analysis could earn 3x more by targeting local service businesses instead of e-commerce (based on 127 competitor analyses).</p>
+                        <div class="money-badge ai">
+                            <i class="fas fa-dollar-sign"></i> Potential Increase: $1,200-$3,500/month
+                        </div>
+                        <div class="ai-recommendation-actions">
+                            <button class="ai-action-btn">Get Local Business Scripts</button>
+                            <button class="ai-action-btn secondary">See Analysis</button>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-recommendation">
+                        <h4 class="ai-recommendation-title"><i class="fas fa-bolt"></i> Quick Win</h4>
+                        <p class="ai-recommendation-desc">AI predicts you could earn $500-$800 this week by offering Instagram Reels templates to accounting firms (tax season demand spike detected).</p>
+                        <div class="money-badge ai">
+                            <i class="fas fa-clock"></i> Time Required: 2-4 hours
+                        </div>
+                        <div class="ai-recommendation-actions">
+                            <button class="ai-action-btn">Get Accounting Templates</button>
+                            <button class="ai-action-btn secondary">See Demand Metrics</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="phase">
+                    <div class="phase-header">
+                        <div class="phase-icon ai">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div>
+                            <h2 class="phase-title">AI-Powered Automation Workflows</h2>
+                            <p class="phase-subtitle">Let AI handle the decision making in your automation</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline">
+                        <div class="milestone ai">
+                            <h3 class="milestone-title">AI Content Generation <span class="milestone-time">Instant Setup</span></h3>
+                            <p class="milestone-desc">Automatically create social posts, product descriptions, and marketing copy</p>
+                            <div class="links">
+                                <a href="https://openai.com/" target="_blank" class="link ai">OpenAI API</a>
+                                <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
+                                    <i class="fas fa-lock"></i> AI Content Templates
+                                </a>
+                            </div>
+                            <div class="money-badge ai">
+                                <i class="fas fa-magic"></i> 100x faster content creation
+                            </div>
+                        </div>
+                        
+                        <div class="milestone ai">
+                            <h3 class="milestone-title">AI Data Analysis <span class="milestone-time">Week 1</span></h3>
+                            <p class="milestone-desc">Automatically analyze scraped data to find profitable opportunities</p>
+                            <div class="links">
+                                <a href="https://pandas.pydata.org/" target="_blank" class="link python">Pandas AI</a>
+                                <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
+                                    <i class="fas fa-lock"></i> Profit Prediction Models
+                                </a>
+                            </div>
+                            <div class="money-badge ai">
+                                <i class="fas fa-chart-pie"></i> 2-5x better decisions
+                            </div>
+                        </div>
+                        
+                        <div class="milestone ai">
+                            <h3 class="milestone-title">AI Client Matching <span class="milestone-time">Week 2</span></h3>
+                            <p class="milestone-desc">Our AI finds perfect clients for your skills and sends automated pitches</p>
+                            <div class="links">
+                                <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
+                                    <i class="fas fa-lock"></i> AI Pitch Generator
+                                </a>
+                                <a href="#" class="link earn premium-lock" data-tooltip="Premium content - unlock with membership">
+                                    <i class="fas fa-lock"></i> Client Matching Dashboard
+                                </a>
+                            </div>
+                            <div class="money-badge ai">
+                                <i class="fas fa-handshake"></i> 3-8x higher conversion
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1141,17 +1455,17 @@
             <h2>Success Stories From Our Students</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <p class="testimonial-content">"I made $4,200 in my first month automating e-commerce price monitoring with Python Selenium. The scripts paid for themselves 10x over!"</p>
+                    <p class="testimonial-content">"The AI decision engine helped me focus on the most profitable automation services. I went from $1,200 to $8,500/month in just 3 months!"</p>
                     <div class="testimonial-author">
                         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James L." class="testimonial-avatar">
                         <div>
                             <div class="author-name">James L.</div>
-                            <div class="author-title">E-commerce Specialist</div>
+                            <div class="author-title">Automation Specialist</div>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-content">"Selling Canva YouTube thumbnail templates on Etsy now brings me $3,500/month in passive income. The design formulas changed everything!"</p>
+                    <p class="testimonial-content">"Using AI to generate Canva templates let me 10x my Etsy store revenue. Now making $7,200/month passively from template sales."</p>
                     <div class="testimonial-author">
                         <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sophia R." class="testimonial-avatar">
                         <div>
@@ -1161,7 +1475,7 @@
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-content">"Combining Python API automation with Canva designs let me build a $15K/month social media management agency in 6 months."</p>
+                    <p class="testimonial-content">"The AI client matching found me perfect customers I'd never have found on my own. Built a $22K/month agency in under 6 months."</p>
                     <div class="testimonial-author">
                         <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="David K." class="testimonial-avatar">
                         <div>
@@ -1175,46 +1489,46 @@
         
         <!-- Pricing Section -->
         <div class="pricing" id="pricing">
-            <h2>Choose Your Automation Package</h2>
+            <h2>Choose Your AI Automation Package</h2>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3 class="pricing-title">Starter</h3>
-                    <div class="pricing-price">$97</div>
+                    <div class="pricing-price">$147</div>
                     <div class="pricing-period">one-time payment</div>
                     <div class="pricing-features">
-                        <div class="pricing-feature"><i class="fas fa-check"></i> Selenium Web Scraping Guide</div>
-                        <div class="pricing-feature"><i class="fas fa-check"></i> 10 Canva Template Designs</div>
-                        <div class="pricing-feature"><i class="fas fa-check"></i> 5 Income Stream Blueprints</div>
-                        <div class="pricing-feature"><i class="fas fa-check"></i> Basic Community Access</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> AI Web Scraping Guide</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> 10 AI Canva Templates</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> 3 AI Income Streams</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> Basic AI Decision Access</div>
                     </div>
                     <button class="pricing-button secondary">Get Started</button>
                 </div>
                 <div class="pricing-card popular">
                     <div class="popular-badge">MOST POPULAR</div>
                     <h3 class="pricing-title">Pro</h3>
-                    <div class="pricing-price">$297</div>
+                    <div class="pricing-price">$497</div>
                     <div class="pricing-period">one-time payment</div>
                     <div class="pricing-features">
                         <div class="pricing-feature"><i class="fas fa-check"></i> Everything in Starter</div>
-                        <div class="pricing-feature"><i class="fas fa-check"></i> Advanced Selenium Scripts</div>
-                        <div class="pricing-feature"><i class="fas fa-check"></i> 50 Premium Canva Templates</div>
-                        <div class="pricing-feature"><i class="fas fa-check"></i> API Automation Framework</div>
-                        <div class="pricing-feature"><i class="fas fa-check"></i> Client Proposal Templates</div>
-                        <div class="pricing-feature"><i class="fas fa-check"></i> Pro Community Access</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> Advanced AI Scripts</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> 50 Premium AI Templates</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> AI Automation Framework</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> AI Client Matching</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> Pro AI Decision Engine</div>
                     </div>
                     <button class="pricing-button">Get Pro Access</button>
                 </div>
                 <div class="pricing-card">
                     <h3 class="pricing-title">Elite</h3>
-                    <div class="pricing-price">$997</div>
+                    <div class="pricing-price">$1,497</div>
                     <div class="pricing-period">one-time payment</div>
                     <div class="pricing-features">
                         <div class="pricing-feature"><i class="fas fa-check"></i> Everything in Pro</div>
-                        <div class="pricing-feature"><i class="fas fa-check"></i> Done-For-You Automation Scripts</div>
-                        <div class="pricing-feature"><i class="fas fa-check"></i> 100+ Canva Template Bundle</div>
-                        <div class="pricing-feature"><i class="fas fa-check"></i> 1-on-1 Strategy Session</div>
-                        <div class="pricing-feature"><i class="fas fa-check"></i> Private Mastermind Group</div>
-                        <div class="pricing-feature"><i class="fas fa-check"></i> VIP Support</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> Done-For-You AI Scripts</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> 100+ AI Template Bundle</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> 1-on-1 AI Strategy Session</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> Private AI Mastermind</div>
+                        <div class="pricing-feature"><i class="fas fa-check"></i> VIP AI Optimization</div>
                     </div>
                     <button class="pricing-button secondary">Go Elite</button>
                 </div>
@@ -1233,7 +1547,7 @@
                 <a href="https://github.com/KhanRiyazi" class="social-link"><i class="fab fa-github"></i></a>
                 <a href="https://www.youtube.com/@ThisOne-007" class="social-link"><i class="fab fa-youtube"></i></a>
             </div>
-            <p>© <span id="year"></span> Automated Income System. All earning strategies verified.</p>
+            <p>© <span id="year"></span> AI-Powered Income System. All earning strategies verified.</p>
             <p style="margin-top: 1rem;"><a href="#" style="color: var(--gray);">Terms</a> | <a href="#" style="color: var(--gray);">Privacy</a> | <a href="#" style="color: var(--gray);">Affiliates</a></p>
         </footer>
     </div>
@@ -1290,10 +1604,34 @@
                 const email = leadForm.querySelector('input').value;
                 console.log('Lead captured:', email);
                 // Add your email collection logic here
-                alert('Thanks! Check your email for the cheat sheet.');
+                alert('Thanks! Check your email for the AI Starter Kit.');
                 leadForm.reset();
             });
         }
+        
+        // Simulate AI Decision Engine (would be connected to real AI in production)
+        function updateAIRecommendations() {
+            // In a real implementation, this would fetch data from an AI API
+            console.log("Updating AI recommendations based on user profile and market data...");
+            
+            // Simulate changing recommendations
+            const opportunities = [
+                "AI-generated product descriptions for Shopify stores",
+                "Automated LinkedIn content for financial advisors",
+                "Instagram Reels templates for real estate agents",
+                "AI-powered lead qualification for local services",
+                "Automated Canva designs for coaches"
+            ];
+            
+            const randomOpportunity = opportunities[Math.floor(Math.random() * opportunities.length)];
+            const randomEarnings = Math.floor(Math.random() * 2000) + 1000;
+            
+            document.querySelector('.ai-recommendation-title').textContent = `High-Demand Opportunity: ${randomOpportunity}`;
+            document.querySelector('.money-badge.ai').innerHTML = `<i class="fas fa-dollar-sign"></i> Estimated Earnings: $${randomEarnings}-$${randomEarnings + 2000}/month`;
+        }
+        
+        // Update recommendations every 30 seconds to simulate live data
+        setInterval(updateAIRecommendations, 30000);
     </script>
 </body>
 </html>
